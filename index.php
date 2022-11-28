@@ -10,7 +10,7 @@
 </head>
 <body>
     <div class="container">
-        <form action="stampa.php">
+        <form action="stampa.php" method="GET">
             <div class="mb-3">
                 <label class="form-label">Inserisci qui un paragrafo!</label>
                 <textarea class="form-control" placeholder="Scrivi..." rows="5" name="paragrafo"></textarea>

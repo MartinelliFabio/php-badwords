@@ -1,9 +1,14 @@
 <?php
-  $parola = $_GET['parola'];
-  $paragrafo = $_GET['paragrafo'];
-  $lunghezza = strlen($paragrafo);
-  $censura = str_replace($parola, '***', $paragrafo);
-  $lunghezzaCensura = strlen($censura);
+    $errore = null;
+    if(isset($_GET['parola']) && !empty($_GET['parola']) && (isset($_GET['paragrafo'])) && !empty($_GET['paragrafo'])) {
+        $parola = $_GET['parola'];
+        $paragrafo = $_GET['paragrafo'];
+        $lunghezza = strlen($paragrafo);
+        $censura = str_replace($parola, '***', $paragrafo);
+        $lunghezzaCensura = strlen($censura);
+    } else {
+        $errore = 'Errore! Valori non validi!';
+    }
 ?>
 
 <!DOCTYPE html>
@@ -18,20 +23,26 @@
 </head>
 <body>
     <div class="container">
-        <div class="paragrafo">
+        <?php if($errore) {
+            echo "<h1>$errore</h1>";
+        } else {
+        echo "<div class='paragrafo'>
             <h3>Questo è il paragrafo scritto</h3>
-            <span><?php echo $paragrafo ?></span>
-            <p>Questa è la sua lunghezza: <strong><?php echo $lunghezza ?></strong></p>
+            <span> $paragrafo </span>
+            <p>Questa è la sua lunghezza: <strong> $lunghezza </strong></p>
         </div>
-        <div class="parola">
+        <div class='parola'>
             <h3>Questa è la parola censurata scelta</h3>
-            <span><?php echo $parola ?></span>
+            <span> $parola </span>
         </div>
-        <div class="paragrafo-censura">
+        <div class='paragrafo-censura'>
             <h3>Questo è il paragrafo ma con la parola censurata</h3>
-            <span><?php echo $censura ?></span>
-            <p>Questa è la lunghezza del paragrafo ma con la parola censurata: <strong><?php echo $lunghezzaCensura ?></strong></p>
-        </div>
+            <span> $censura </span>
+            <p>Questa è la lunghezza del paragrafo ma con la parola censurata: <strong> $lunghezzaCensura </strong></p>
+        </div>";
+        }
+        
+        ?>
     </div>
 </body>
 </html>

@@ -10,6 +10,7 @@
 </head>
 <body>
     <div class="container">
+        <h1 class="display-3 fw-bold text-center my-5">Bad Words</h1>
         <form action="stampa.php" method="GET">
             <div class="mb-3">
                 <label class="form-label">Inserisci qui un paragrafo!</label>

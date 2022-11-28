@@ -24,22 +24,28 @@
 <body>
     <div class="container">
         <?php if($errore) {
-            echo "<h1>$errore</h1>";
+            echo 
+            "<div class='text-center'>
+                <h1 class='display-3 fw-bold my-5'>Bad Word</h1>
+                <span class='display-5 fw-bold'>$errore</span>
+            </div>";
         } else {
-        echo "<div class='paragrafo'>
-            <h3>Questo è il paragrafo scritto</h3>
-            <span> $paragrafo </span>
-            <p>Questa è la sua lunghezza: <strong> $lunghezza </strong></p>
-        </div>
-        <div class='parola'>
-            <h3>Questa è la parola censurata scelta</h3>
-            <span> $parola </span>
-        </div>
-        <div class='paragrafo-censura'>
-            <h3>Questo è il paragrafo ma con la parola censurata</h3>
-            <span> $censura </span>
-            <p>Questa è la lunghezza del paragrafo ma con la parola censurata: <strong> $lunghezzaCensura </strong></p>
-        </div>";
+        echo 
+            "<h1 class='display-3 fw-bold my-5 text-center'>Bad Word</h1>
+            <div class='paragrafo'>
+                <h3>Questo è il paragrafo scritto</h3>
+                <span> $paragrafo </span>
+                <p>Questa è la sua lunghezza: <strong> $lunghezza </strong></p>
+            </div>
+            <div class='parola'>
+                <h3>Questa è la parola censurata scelta</h3>
+                <span> $parola </span>
+            </div>
+            <div class='paragrafo-censura'>
+                <h3>Questo è il paragrafo ma con la parola censurata</h3>
+                <span> $censura </span>
+                <p>Questa è la lunghezza del paragrafo ma con la parola censurata: <strong> $lunghezzaCensura </strong></p>
+            </div>";
         }
         
         ?>
